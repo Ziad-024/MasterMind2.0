@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MasterMind2_0 {
 
 	public static void main(String[] args) {
-// test
+
 		int wit = 7;
 		int zwart = 8;
 		int none = 0;
@@ -19,17 +19,12 @@ public class MasterMind2_0 {
 		int code3 = rand.nextInt(6);
 		int code4 = rand.nextInt(6);
 		int[] codes = { kleuren[code1], kleuren[code2], kleuren[code3], kleuren[code4] };
-		// 2415
-//        int codes = code1 + code2 + code3 + code4;
 
 		System.out.print("De code: x x x x ");
 		for (int a : codes) {
-			System.out.print(a + " ");
+			
 		}
 
-//		System.out.println("De code:");
-//
-//		System.out.println(codes[0] + " " + codes[1] + " " + codes[2] + " " + codes[3]);
 
 		System.out.println(" ");
 
@@ -60,8 +55,6 @@ public class MasterMind2_0 {
 				System.out.print(a + " ");
 			}
 
-//			System.out.println(
-//					"Gok: " + antwoordcodes[0] + " " + antwoordcodes[1] + " " + antwoordcodes[2] + " " + antwoordcodes[3]);
 
 			System.out.println("");
 
@@ -135,8 +128,6 @@ public class MasterMind2_0 {
 				System.out.print(a + " ");
 			}
 
-//			System.out.println(
-//					"Hint: " + hintposities[0] + " " + hintposities[1] + " " + hintposities[2] + " " + hintposities[3]);
 
 			System.out.println("De code was" + codes);
 		} while (rij < 1);
