@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MasterMind2_0 {
 
 	public static void main(String[] args) {
-
+// test
 		int wit = 7;
 		int zwart = 8;
 		int none = 0;
@@ -138,9 +138,8 @@ public class MasterMind2_0 {
 //			System.out.println(
 //					"Hint: " + hintposities[0] + " " + hintposities[1] + " " + hintposities[2] + " " + hintposities[3]);
 
-			System.out.println("De code was" + codes);} while (rij < 1);
-
-		
+			System.out.println("De code was" + codes);
+		} while (rij < 1);
 
 	}
 
