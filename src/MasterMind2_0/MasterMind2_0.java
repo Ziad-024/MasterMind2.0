@@ -68,31 +68,31 @@ public class MasterMind2_0 {
 				hintposities[0] = zwart;
 			}
 
-			else if (antwoordcodes[0] == codes[1]) {
+			else if (antwoordcodes[0] == codes[1+2+3]) {
 				hintposities[0] = wit;
 			}
 
-			else if (antwoordcodes[0] == codes[2]) {
-				hintposities[0] = wit;
-
-			} else if (antwoordcodes[0] == codes[3]) {
-				hintposities[0] = wit;
-
-			} else
-				hintposities[0] = none;
-
-			if (antwoordcodes[1] == codes[1]) {
-				hintposities[1] = zwart;
-			}
-
-			else if (antwoordcodes[1] == codes[2]) {
-				hintposities[1] = wit;
-			}
-
-			else if (antwoordcodes[1] == codes[3]) {
-				hintposities[1] = wit;
-
-			}
+//			else if (antwoordcodes[0] == codes[2]) {
+//				hintposities[0] = wit;
+//
+//			} else if (antwoordcodes[0] == codes[3]) {
+//				hintposities[0] = wit;
+//
+//			} else
+//				hintposities[0] = none;
+//
+//			if (antwoordcodes[1] == codes[1]) {
+//				hintposities[1] = zwart;
+//			}
+//
+//			else if (antwoordcodes[1] == codes[2]) {
+//				hintposities[1] = wit;
+//			}
+//
+//			else if (antwoordcodes[1] == codes[3]) {
+//				hintposities[1] = wit;
+//
+//			}
 
 			else
 				hintposities[1] = none;
