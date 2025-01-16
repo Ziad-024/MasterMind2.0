@@ -14,17 +14,9 @@ public class MasterMind2_0 {
 		int[] kleuren = { 1, 2, 3, 4, 5, 6 };
 		Random rand = new Random();
 
-		int code1 = rand.nextInt(6);
-		int code2 = rand.nextInt(6);
-		int code3 = rand.nextInt(6);
-		int code4 = rand.nextInt(6);
-		int[] codes = { kleuren[code1], kleuren[code2], kleuren[code3], kleuren[code4] };
-
+		codesFunctie func = new codesFunctie();
+		int[] codes = func.codesFunctie();
 		System.out.print("De code: x x x x ");
-		for (int a : codes) {
-			
-		}
-
 
 		System.out.println(" ");
 
@@ -55,7 +47,6 @@ public class MasterMind2_0 {
 				System.out.print(a + " ");
 			}
 
-
 			System.out.println("");
 
 			System.out.println("Hint:");
@@ -68,31 +59,31 @@ public class MasterMind2_0 {
 				hintposities[0] = zwart;
 			}
 
-			else if (antwoordcodes[0] == codes[1+2+3]) {
+			else if (antwoordcodes[0] == codes[1]) {
 				hintposities[0] = wit;
 			}
 
-//			else if (antwoordcodes[0] == codes[2]) {
-//				hintposities[0] = wit;
-//
-//			} else if (antwoordcodes[0] == codes[3]) {
-//				hintposities[0] = wit;
-//
-//			} else
-//				hintposities[0] = none;
-//
-//			if (antwoordcodes[1] == codes[1]) {
-//				hintposities[1] = zwart;
-//			}
-//
-//			else if (antwoordcodes[1] == codes[2]) {
-//				hintposities[1] = wit;
-//			}
-//
-//			else if (antwoordcodes[1] == codes[3]) {
-//				hintposities[1] = wit;
-//
-//			}
+			else if (antwoordcodes[0] == codes[2]) {
+				hintposities[0] = wit;
+
+			} else if (antwoordcodes[0] == codes[3]) {
+				hintposities[0] = wit;
+
+			} else
+				hintposities[0] = none;
+
+			if (antwoordcodes[1] == codes[1]) {
+				hintposities[1] = zwart;
+			}
+
+			else if (antwoordcodes[1] == codes[2]) {
+				hintposities[1] = wit;
+			}
+
+			else if (antwoordcodes[1] == codes[3]) {
+				hintposities[1] = wit;
+
+			}
 
 			else
 				hintposities[1] = none;
@@ -120,17 +111,22 @@ public class MasterMind2_0 {
 			if (hintpostitiesGoed == zwart) {
 				System.out.println("Gefeliciteerd!");
 				break;
-			} else
+			} else {
 				System.out.println("fout!");
 
-			System.out.print("hint: ");
-			for (int a : hintposities) {
-				System.out.print(a + " ");
+				System.out.print("hint: ");
+				for (int a : hintposities) {
+					System.out.print(a + " ");
+				}
+				;
+
 			}
-
-
-			System.out.println("De code was" + codes);
 		} while (rij < 1);
+		System.out.println("de code was:");
+		for (int a : codes) {
+
+			System.out.print(a);
+		}
 
 	}
 
