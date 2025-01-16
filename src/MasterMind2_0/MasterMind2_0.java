@@ -7,9 +7,6 @@ public class MasterMind2_0 {
 
 	public static void main(String[] args) {
 
-		int wit = 7;
-		int zwart = 8;
-		int none = 0;
 		Scanner sc = new Scanner(System.in);
 		int[] kleuren = { 1, 2, 3, 4, 5, 6 };
 		Random rand = new Random();
@@ -52,76 +49,9 @@ public class MasterMind2_0 {
 			System.out.println("Hint:");
 
 			System.out.println("");
+			func.NaKijkFunction(codes, antwoordcodes);
 
-			int[] hintposities = new int[4];
-
-			if (antwoordcodes[0] == codes[0]) {
-				hintposities[0] = zwart;
-			}
-
-			else if (antwoordcodes[0] == codes[1]) {
-				hintposities[0] = wit;
-			}
-
-			else if (antwoordcodes[0] == codes[2]) {
-				hintposities[0] = wit;
-
-			} else if (antwoordcodes[0] == codes[3]) {
-				hintposities[0] = wit;
-
-			} else
-				hintposities[0] = none;
-
-			if (antwoordcodes[1] == codes[1]) {
-				hintposities[1] = zwart;
-			}
-
-			else if (antwoordcodes[1] == codes[2]) {
-				hintposities[1] = wit;
-			}
-
-			else if (antwoordcodes[1] == codes[3]) {
-				hintposities[1] = wit;
-
-			}
-
-			else
-				hintposities[1] = none;
-
-			if (antwoordcodes[2] == codes[2]) {
-				hintposities[2] = zwart;
-			}
-
-			else if (antwoordcodes[2] == codes[3]) {
-				hintposities[2] = wit;
-			}
-
-			else
-				hintposities[2] = none;
-
-			if (antwoordcodes[3] == codes[3]) {
-				hintposities[3] = zwart;
-			}
-
-			else
-				hintposities[3] = none;
-
-			int hintpostitiesGoed = hintposities[0] & hintposities[1] & hintposities[2] & hintposities[3];
-
-			if (hintpostitiesGoed == zwart) {
-				System.out.println("Gefeliciteerd!");
-				break;
-			} else {
-				System.out.println("fout!");
-
-				System.out.print("hint: ");
-				for (int a : hintposities) {
-					System.out.print(a + " ");
-				}
-				;
-
-			}
-		} while (rij < 1);
+		} while (rij < 10);
 		System.out.println("de code was:");
 		for (int a : codes) {
 
