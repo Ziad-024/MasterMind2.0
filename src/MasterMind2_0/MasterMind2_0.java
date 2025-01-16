@@ -39,6 +39,7 @@ public class MasterMind2_0 {
 				}
 				antwoordcodes[i] = loopInput;
 			}
+
 			System.out.print("gok: ");
 			for (int a : antwoordcodes) {
 				System.out.print(a + " ");
