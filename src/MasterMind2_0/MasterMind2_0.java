@@ -1,8 +1,5 @@
 package MasterMind2_0;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class MasterMind2_0 {
 
 	public static void main(String[] args) {
@@ -10,7 +7,7 @@ public class MasterMind2_0 {
 		int[] kleuren = { 1, 2, 3, 4, 5, 6 };
 
 		codesFunctie func = new codesFunctie();
-		int[] codes = func.codesFunctie();
+		int[] codes = func.CodesFunctie1();
 		System.out.print("De code: x x x x ");
 
 		System.out.println(" ");
@@ -25,16 +22,10 @@ public class MasterMind2_0 {
 			System.out.println("Raad de code:");
 			System.out.println("kies uit rood = 1, geel = 2, groen = 3, blauw = 4, paars = 5, oranje = 6");
 
-			int[] antwoordcodes = new int[4];
+			int[] antwoordcodes = func.Userinput();
 
-			
-
-			System.out.println("");
-
-			System.out.println("Hint:");
-
-			System.out.println("");
-			func.NaKijkFunction(codes, antwoordcodes, kleuren);
+			Boolean x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
+			System.out.println(x);
 
 		} while (rij < 10);
 		System.out.println("de code was:");

@@ -1,11 +1,12 @@
 package MasterMind2_0;
 
 import java.util.Random;
+
 import java.util.Scanner;
 
 public class codesFunctie {
 
-	public int[] codesFunctie() {
+	public int[] CodesFunctie1() {
 
 		int[] kleuren = { 1, 2, 3, 4, 5, 6 };
 		Random rand = new Random();
@@ -20,29 +21,41 @@ public class codesFunctie {
 
 	}
 
-	public int NaKijkFunction(int[] codes, int[] antwoordcodes, int[] kleuren) {
+	public int [] Userinput() {
+		{
+			Scanner sc = new Scanner(System.in);
+			int[] antwoordcodes = new int[4];
+			for (int i = 0; i < antwoordcodes.length; i++) {
+				String in = sc.next();
+				int loopInput = Integer.parseInt(in);
+				if (loopInput >= 6) {
+					loopInput = 6;
+				} else if (loopInput <= 1) {
+					loopInput = 1;
+				}
+				antwoordcodes[i] = loopInput;
+				
+			}
+			return antwoordcodes;
+		}
+	}
+
+	public Boolean NaKijkFunction(int[] codes, int[] antwoordcodes, int[] kleuren) {
 		int[] hintposities = new int[4];
 		int wit = 7;
 		int zwart = 8;
 		int none = 0;
-		Scanner sc = new Scanner (System.in);
-		
-		
-		for (int i = 0; i < antwoordcodes.length; i++) {
-			String in = sc.next();
-			int loopInput = Integer.parseInt(in);
-			if (loopInput >= 6) {
-				loopInput = 6;
-			} else if (loopInput <= 1) {
-				loopInput = 1;
-			}
-			antwoordcodes[i] = loopInput;
-		}
-		
+
 		System.out.print("gok: ");
 		for (int a : antwoordcodes) {
 			System.out.print(a + " ");
 		}
+
+		System.out.println("");
+
+		System.out.println("Hint:");
+
+		System.out.println("");
 
 		if (antwoordcodes[0] == codes[0]) {
 			hintposities[0] = zwart;
@@ -95,9 +108,10 @@ public class codesFunctie {
 		else
 			hintposities[3] = none;
 
-		int hintpostitiesGoed = hintposities[0] & hintposities[1] & hintposities[2] & hintposities[3];
+		Boolean hintpostitiesGoed = hintposities[0] == zwart && hintposities[1] == zwart && hintposities[2] == zwart
+				&& hintposities[3] == zwart;
 
-		if (hintpostitiesGoed == zwart) {
+		if (hintpostitiesGoed == true) {
 			System.out.println("Gefeliciteerd!");
 
 		} else {
@@ -107,16 +121,11 @@ public class codesFunctie {
 			for (int a : hintposities) {
 				System.out.print(a + " ");
 			}
-			;
 
 		}
 
 		return hintpostitiesGoed;
 
 	}
-	
-	
-	
-	}
-	
 
+}
