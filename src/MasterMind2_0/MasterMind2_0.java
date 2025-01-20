@@ -9,7 +9,10 @@ public class MasterMind2_0 {
 		codesFunctie func = new codesFunctie();
 		int[] codes = func.CodesFunctie1();
 		System.out.print("De code: x x x x ");
+		for (int a : codes) {
 
+			System.out.print(a);
+		}
 		System.out.println(" ");
 
 		int rij = 0;
@@ -25,7 +28,10 @@ public class MasterMind2_0 {
 			int[] antwoordcodes = func.Userinput();
 
 			Boolean x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
-			System.out.println(x);
+			//System.out.println(x);
+			if(x == true) {
+				break;
+			}
 
 		} while (rij < 10);
 		System.out.println("de code was:");
