@@ -21,20 +21,18 @@ public class codesFunctie {
 
 	}
 
-	public int [] Userinput() {
+	public int[] Userinput() {
 		{
 			Scanner sc = new Scanner(System.in);
 			int[] antwoordcodes = new int[4];
 			for (int i = 0; i < antwoordcodes.length; i++) {
 				String in = sc.next();
 				int loopInput = Integer.parseInt(in);
-				if (loopInput >= 6) {
-					loopInput = 6;
-				} else if (loopInput <= 1) {
-					loopInput = 1;
-				}
+				 if (loopInput > 6 || loopInput < 0) {
+			            System.out.println("Fout: De waarde van het spel moet tussen 1 en 6 liggen.");
+			        }
 				antwoordcodes[i] = loopInput;
-				
+
 			}
 			return antwoordcodes;
 		}
@@ -61,30 +59,19 @@ public class codesFunctie {
 			hintposities[0] = zwart;
 		}
 
-		else if (antwoordcodes[0] == codes[1]) {
+		else if (antwoordcodes[0] == codes[1] || antwoordcodes[0] == codes[2] || antwoordcodes[0] == codes[3]) {
 			hintposities[0] = wit;
 		}
 
-		else if (antwoordcodes[0] == codes[2]) {
-			hintposities[0] = wit;
-
-		} else if (antwoordcodes[0] == codes[3]) {
-			hintposities[0] = wit;
-
-		} else
+		else
 			hintposities[0] = none;
 
 		if (antwoordcodes[1] == codes[1]) {
 			hintposities[1] = zwart;
 		}
 
-		else if (antwoordcodes[1] == codes[2]) {
+		else if (antwoordcodes[1] == codes[2] || antwoordcodes[1] == codes[3] || antwoordcodes[1] == codes[0]) {
 			hintposities[1] = wit;
-		}
-
-		else if (antwoordcodes[1] == codes[3]) {
-			hintposities[1] = wit;
-
 		}
 
 		else
@@ -94,7 +81,7 @@ public class codesFunctie {
 			hintposities[2] = zwart;
 		}
 
-		else if (antwoordcodes[2] == codes[3]) {
+		else if (antwoordcodes[2] == codes[3] || antwoordcodes[2] == codes[1] || antwoordcodes[2] == codes[0]) {
 			hintposities[2] = wit;
 		}
 
@@ -103,6 +90,10 @@ public class codesFunctie {
 
 		if (antwoordcodes[3] == codes[3]) {
 			hintposities[3] = zwart;
+		}
+
+		else if (antwoordcodes[3] == codes[2] || antwoordcodes[3] == codes[1] || antwoordcodes[3] == codes[0]) {
+			hintposities[3] = wit;
 		}
 
 		else
