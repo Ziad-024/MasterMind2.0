@@ -134,27 +134,4 @@ public class codesFunctie {
 
 	}
 
-	public Boolean EindResultaat() {
-		int[] hintposities = new int[4];
-		int zwart = 8;
-		Boolean hintpostitiesGoed = hintposities[0] == zwart && hintposities[1] == zwart && hintposities[2] == zwart
-				&& hintposities[3] == zwart;
-
-		if (hintpostitiesGoed == true) {
-			System.out.println("Gefeliciteerd!");
-
-		} else {
-			System.out.println("fout!");
-
-			System.out.print("hint: ");
-			for (int a : hintposities) {
-				System.out.print(a + " ");
-			}
-
-		}
-
-		return hintpostitiesGoed;
-
-	}
-
 }

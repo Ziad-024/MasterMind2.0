@@ -5,10 +5,16 @@ public class MasterMind2_0 {
 	public static void main(String[] args) {
 
 		int[] kleuren = { 1, 2, 3, 4, 5, 6 };
+		
 
 		codesFunctie func = new codesFunctie();
 		int[] codes = func.CodesFunctie1();
 		System.out.print("De code: x x x x ");
+		System.out.println("de code was:");
+		for (int a : codes) {
+
+			System.out.print(a);
+		}
 		
 		System.out.println(" ");
 
@@ -26,7 +32,6 @@ public class MasterMind2_0 {
 			int[] antwoordcodes = func.Userinput();
 
 			Boolean x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
-			
 			
 			if(x == true) {
 				break;
