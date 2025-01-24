@@ -13,6 +13,7 @@ public class MasterMind2_0 {
 		System.out.println(" ");
 
 		int rij = 0;
+		
 
 		do {
 			rij++;
@@ -25,6 +26,7 @@ public class MasterMind2_0 {
 			int[] antwoordcodes = func.Userinput();
 
 			Boolean x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
+			
 			
 			if(x == true) {
 				break;

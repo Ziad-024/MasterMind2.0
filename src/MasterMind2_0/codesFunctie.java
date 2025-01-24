@@ -25,17 +25,32 @@ public class codesFunctie {
 		{
 			Scanner sc = new Scanner(System.in);
 			int[] antwoordcodes = new int[4];
-			for (int i = 0; i < antwoordcodes.length; i++) {
-				String in = sc.next();
-				int loopInput = Integer.parseInt(in);
-				 if (loopInput > 6 || loopInput < 0) {
-			            System.out.println("Fout: De waarde van het spel moet tussen 1 en 6 liggen.");
-			        }
-				antwoordcodes[i] = loopInput;
 
+			for (int i = 0; i < antwoordcodes.length; i++) {
+				while (true) {
+					try {
+						String in = sc.next();
+						int loopInput = Integer.parseInt(in);
+
+						if (loopInput > 6 || loopInput < 1) {
+							System.out.println("Fout: De waarde van het spel moet tussen 1 en 6 liggen.");
+						} else {
+							antwoordcodes[i] = loopInput;
+							break; // exit the loop and continue with the next input
+						}
+					} catch (NumberFormatException e) {
+						System.out.println("Fout: Voer alstublieft een geldig getal in.");
+					}
+				}
+			}
+
+			for (int code : antwoordcodes) {
+				System.out.println(code);
 			}
 			return antwoordcodes;
+
 		}
+
 	}
 
 	public Boolean NaKijkFunction(int[] codes, int[] antwoordcodes, int[] kleuren) {
@@ -99,6 +114,29 @@ public class codesFunctie {
 		else
 			hintposities[3] = none;
 
+		Boolean hintpostitiesGoed = hintposities[0] == zwart && hintposities[1] == zwart && hintposities[2] == zwart
+				&& hintposities[3] == zwart;
+
+		if (hintpostitiesGoed == true) {
+			System.out.println("Gefeliciteerd!");
+
+		} else {
+			System.out.println("fout!");
+
+			System.out.print("hint: ");
+			for (int a : hintposities) {
+				System.out.print(a + " ");
+			}
+
+		}
+
+		return hintpostitiesGoed;
+
+	}
+
+	public Boolean EindResultaat() {
+		int[] hintposities = new int[4];
+		int zwart = 8;
 		Boolean hintpostitiesGoed = hintposities[0] == zwart && hintposities[1] == zwart && hintposities[2] == zwart
 				&& hintposities[3] == zwart;
 
