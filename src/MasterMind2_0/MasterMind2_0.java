@@ -31,9 +31,12 @@ public class MasterMind2_0 {
 
 			int[] antwoordcodes = func.Userinput();
 
-			Boolean x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
+			int[] x = func.NaKijkFunction(codes, antwoordcodes, kleuren);
 			
-			if(x == true) {
+			
+			
+			Boolean y = func.EindResultaat(x);
+			if(y == true) {
 				break;
 			}
 

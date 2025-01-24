@@ -5,6 +5,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class codesFunctie {
+	int wit = 7;
+	int zwart = 8;
+	int none = 0;
 
 	public int[] CodesFunctie1() {
 
@@ -53,11 +56,8 @@ public class codesFunctie {
 
 	}
 
-	public Boolean NaKijkFunction(int[] codes, int[] antwoordcodes, int[] kleuren) {
+	public int[] NaKijkFunction(int[] codes, int[] antwoordcodes, int[] kleuren) {
 		int[] hintposities = new int[4];
-		int wit = 7;
-		int zwart = 8;
-		int none = 0;
 
 		System.out.print("gok: ");
 		for (int a : antwoordcodes) {
@@ -114,12 +114,18 @@ public class codesFunctie {
 		else
 			hintposities[3] = none;
 
+		return hintposities;
+
+	}
+
+	public Boolean EindResultaat(int[] hintposities) {
 		Boolean hintpostitiesGoed = hintposities[0] == zwart && hintposities[1] == zwart && hintposities[2] == zwart
 				&& hintposities[3] == zwart;
 
 		if (hintpostitiesGoed == true) {
 			System.out.println("Gefeliciteerd!");
 
+			return true;
 		} else {
 			System.out.println("fout!");
 
@@ -129,9 +135,7 @@ public class codesFunctie {
 			}
 
 		}
-
-		return hintpostitiesGoed;
-
+		return false;
 	}
 
 }
