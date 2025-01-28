@@ -39,7 +39,7 @@ public class codesFunctie {
 							System.out.println("Fout: De waarde van het spel moet tussen 1 en 6 liggen.");
 						} else {
 							antwoordcodes[i] = loopInput;
-							break; // exit the loop and continue with the next input
+							break; 
 						}
 					} catch (NumberFormatException e) {
 						System.out.println("Fout: Voer alstublieft een geldig getal in.");
